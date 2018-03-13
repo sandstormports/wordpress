@@ -144,6 +144,16 @@ include(ABSPATH . 'wp-admin/admin-header.php');
 	}
 	?>
 
+	<hr class="wp-header-end">
+
+	<div class="error hide-if-js">
+		<p><?php _e( 'The Theme Installer screen requires JavaScript.' ); ?></p>
+	</div>
+
+	<div class="upload-theme">
+		<?php install_themes_upload(); ?>
+	</div>
+
 <?php
 if ( $tab ) {
 	/**
