@@ -116,13 +116,13 @@ echo esc_html( $title );
 ?></h1>
 
 <?php
-if ( ! empty( $tabs['upload'] ) && current_user_can( 'upload_plugins' ) ) {
-	printf( ' <a href="%s" class="upload-view-toggle page-title-action"><span class="upload">%s</span><span class="browse">%s</span></a>',
-		( 'upload' === $tab ) ? self_admin_url( 'plugin-install.php' ) : self_admin_url( 'plugin-install.php?tab=upload' ),
-		__( 'Upload Plugin' ),
-		__( 'Browse Plugins' )
-	);
-}
+// if ( ! empty( $tabs['upload'] ) && current_user_can( 'upload_plugins' ) ) {
+// 	printf( ' <a href="%s" class="upload-view-toggle page-title-action"><span class="upload">%s</span><span class="browse">%s</span></a>',
+// 		( 'upload' === $tab ) ? self_admin_url( 'plugin-install.php' ) : self_admin_url( 'plugin-install.php?tab=upload' ),
+// 		__( 'Upload Plugin' ),
+// 		__( 'Browse Plugins' )
+// 	);
+// }
 ?>
 
 <hr class="wp-header-end">

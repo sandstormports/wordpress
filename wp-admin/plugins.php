@@ -355,10 +355,7 @@ if ( $action ) {
 					<?php wp_nonce_field('bulk-plugins') ?>
 					<?php submit_button( $data_to_delete ? __( 'Yes, delete these files and data' ) : __( 'Yes, delete these files' ), '', 'submit', false ); ?>
 				</form>
-				<?php
-				$referer = wp_get_referer();
-				?>
-				<form method="post" action="<?php echo $referer ? esc_url( $referer ) : ''; ?>" style="display:inline;">
+				<form method="post" action="/wp-admin/plugins.php" style="display:inline;">
 					<?php submit_button( __( 'No, return me to the plugin list' ), '', 'submit', false ); ?>
 				</form>
 			</div>
