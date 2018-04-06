@@ -45,8 +45,8 @@ class Bulk_Plugin_Upgrader_Skin extends Bulk_Upgrader_Skin {
 	public function bulk_footer() {
 		parent::bulk_footer();
 		$update_actions =  array(
-			'plugins_page' => '<a href="' . self_admin_url( 'plugins.php' ) . '" target="_parent">' . __( 'Return to Plugins page' ) . '</a>',
-			'updates_page' => '<a href="' . self_admin_url( 'update-core.php' ) . '" target="_parent">' . __( 'Return to WordPress Updates page' ) . '</a>'
+			'plugins_page' => '<a href="' . self_admin_url( 'plugins.php' ) . '">' . __( 'Return to Plugins page' ) . '</a>',
+			'updates_page' => '<a href="' . self_admin_url( 'update-core.php' ) . '">' . __( 'Return to WordPress Updates page' ) . '</a>'
 		);
 		if ( ! current_user_can( 'activate_plugins' ) )
 			unset( $update_actions['plugins_page'] );

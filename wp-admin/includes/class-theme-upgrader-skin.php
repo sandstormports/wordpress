@@ -71,7 +71,7 @@ class Theme_Upgrader_Skin extends WP_Upgrader_Skin {
 				unset( $update_actions['preview'], $update_actions['activate'] );
 		}
 
-		$update_actions['themes_page'] = '<a href="' . self_admin_url( 'themes.php' ) . '" target="_parent">' . __( 'Return to Themes page' ) . '</a>';
+		$update_actions['themes_page'] = '<a href="' . self_admin_url( 'themes.php' ) . '">' . __( 'Return to Themes page' ) . '</a>';
 
 		/**
 		 * Filters the list of action links available following a single theme update.
