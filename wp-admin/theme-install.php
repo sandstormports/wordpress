@@ -151,7 +151,7 @@ include(ABSPATH . 'wp-admin/admin-header.php');
 	</div>
 
 	<div class="upload-theme">
-		<?php install_themes_upload(); ?>
+	<?php install_themes_upload(); ?>
 	</div>
 
 <?php
