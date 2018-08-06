@@ -52,6 +52,17 @@ function classic_editor_init_actions() {
 	add_filter( 'plugin_action_links', 'classic_editor_add_settings_link', 10, 2 );
 	add_action( 'admin_init', 'classic_editor_admin_init' );
 
+	/**
+	 * 06.08.2018 jj: disable "deaktivate" option
+	 */
+	add_filter( 'plugin_action_links', function ( $actions, $plugin_file ) {
+		if ( plugin_basename( __FILE__ ) === $plugin_file ) {
+			unset( $actions['deactivate'] );
+			$actions['warning'] = 'Needed by Sandstorm.';
+		}
+		return $actions;
+	}, 10, 2 );
+
 	if ( ! classic_editor_is_gutenberg_active() || ! (
 		has_filter( 'replace_editor', 'gutenberg_init' ) ||
 		has_filter( 'load-post.php', 'gutenberg_intercept_edit_post' ) ) ) {
@@ -162,7 +173,10 @@ function classic_editor_admin_init() {
 		'writing' => array( 'classic-editor-replace' ),
 	) );
 
-	add_settings_field( 'classic-editor', __( 'Classic editor settings', 'classic-editor' ), 'classic_editor_settings', 'writing' );
+	/**
+	 * 06.08.2018 jj: disable "settings" option
+	 */
+	// add_settings_field( 'classic-editor', __( 'Classic editor settings', 'classic-editor' ), 'classic_editor_settings', 'writing' );
 }
 
 /**
@@ -295,8 +309,11 @@ function classic_editor_admin_bar_menu( $wp_admin_bar ) {
  */
 function classic_editor_add_settings_link( $links, $file ) {
 	if ( $file === 'classic-editor/classic-editor.php' && current_user_can( 'manage_options' ) ) {
-		$settings_link = sprintf( '<a href="%s">%s</a>', admin_url( 'options-writing.php#classic-editor-options' ), __( 'Settings', 'classic-editor' ) );
-		array_unshift( $links, $settings_link );
+		/**
+	 	* 06.08.2018 jj: disable "settings" option
+	 	*/
+		//$settings_link = sprintf( '<a href="%s">%s</a>', admin_url( 'options-writing.php#classic-editor-options' ), __( 'Settings', 'classic-editor' ) );
+		//array_unshift( $links, $settings_link );
 	}
 
 	return $links;
