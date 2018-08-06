@@ -6,6 +6,7 @@ function wp_install_defaults() {
 
          update_option('active_plugins', array(
                                 'sqlite-integration/sqlite-integration.php',
+                                'classic-editor/classic-editor.php',
                                 'wordpress-importer/wordpress-importer.php'));
 
          global $wp_rewrite;
