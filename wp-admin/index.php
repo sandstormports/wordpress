@@ -27,6 +27,15 @@ add_thickbox();
 if ( wp_is_mobile() )
 	wp_enqueue_script( 'jquery-touch-punch' );
 
+// ensure Sandstorm-specific mandetory plugins are activated
+// and disable gutenberg welcome panel
+activate_plugin( 'sqlite-integration/sqlite-integration.php' );
+activate_plugin( 'classic-editor/classic-editor.php' );
+activate_plugin( 'wordpress-importer/wordpress-importer.php' );
+if( function_exists( 'wp_try_gutenberg_panel' ) ) {
+ remove_action('try_gutenberg_panel', 'wp_try_gutenberg_panel');
+}
+
 $title = __('Dashboard');
 $parent_file = 'index.php';
 
