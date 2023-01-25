@@ -72,6 +72,11 @@ wp_enqueue_style( 'ie' );
 wp_enqueue_script('utils');
 wp_enqueue_script( 'svg-painter' );
 
+// SANDSTORM-SPECIFIC HACK
+wp_register_script( 'powerbox' , '/powerbox.js', '', true);
+wp_enqueue_script('powerbox');
+// END SANDSTORM-SPECIFIC HACK
+
 $admin_body_class = preg_replace('/[^a-z0-9_-]+/i', '-', $hook_suffix);
 ?>
 <script type="text/javascript">
